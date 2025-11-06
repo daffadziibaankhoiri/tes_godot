@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://1w1ln6u54li4"]
+
+[ext_resource type="Texture2D" uid="uid://cwf1bm76xv78p" path="res://character/soraya/knight.png" id="1_drhme"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guiot"]
+atlas = ExtResource("1_drhme")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppd22"]
+atlas = ExtResource("1_drhme")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cebx"]
+atlas = ExtResource("1_drhme")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tytcy"]
+atlas = ExtResource("1_drhme")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_462ap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guiot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppd22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cebx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tytcy")
+}],
+"loop": true,
+"name": &"knight sora",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5qbti"]
+radius = 5.0
+
+[node name="by sora" type="Node2D"]
+
+[node name="soraya trying" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="soraya trying"]
+sprite_frames = SubResource("SpriteFrames_462ap")
+animation = &"knight sora"
+frame = 1
+frame_progress = 0.196458
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="soraya trying"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_5qbti")
