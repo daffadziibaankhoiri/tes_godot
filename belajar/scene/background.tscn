@@ -1,0 +1,124 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpvr8q8esn2ix"]
+
+[ext_resource type="Texture2D" uid="uid://1y5y7tdo8t2y" path="res://background/20250812_122625.jpg" id="1_dr1ox"]
+[ext_resource type="Script" uid="uid://ce0yqbd0styea" path="res://scene/character_body_2d.gd" id="2_s3kv8"]
+[ext_resource type="Texture2D" uid="uid://dv5d5ypjw1g8o" path="res://character/monster.png" id="3_wua0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpy8u"]
+size = Vector2(1162.5, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr1ox"]
+size = Vector2(20, 576)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hehlj"]
+size = Vector2(151, 146.25)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dr1ox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3kv8"]
+size = Vector2(212, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wua0t"]
+size = Vector2(88.5, 100.5)
+
+[node name="Background" type="Node2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(609.75, 326.25)
+scale = Vector2(0.36828613, 0.37769362)
+texture = ExtResource("1_dr1ox")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 576.0
+offset_top = 14.0
+offset_right = 1118.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Game Daffa Dziiba'an Khoiri"
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+offset_left = 2.0
+offset_top = 408.0
+offset_right = 1159.0
+offset_bottom = 645.0
+
+[node name="Lantai" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(577.75, 608.5)
+shape = SubResource("RectangleShape2D_tpy8u")
+debug_color = Color(0.41040823, 0.48253763, 0.953227, 0.41960785)
+
+[node name="Dinding Kanan" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1151, 299)
+shape = SubResource("RectangleShape2D_dr1ox")
+
+[node name="Dinding Kiri" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(11, 288)
+shape = SubResource("RectangleShape2D_dr1ox")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_s3kv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(210, 497)
+shape = SubResource("RectangleShape2D_hehlj")
+
+[node name="Pohon" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+position = Vector2(2.9999962, 9.00001)
+scale = Vector2(0.1205, 0.123874985)
+texture = ExtResource("3_wua0t")
+
+[node name="Platform" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_dr1ox")
+
+[node name="Platform_4" type="CollisionShape2D" parent="Platform"]
+position = Vector2(126, 177)
+shape = SubResource("RectangleShape2D_s3kv8")
+
+[node name="ColorRect" type="ColorRect" parent="Platform/Platform_4"]
+offset_left = -105.0
+offset_top = -9.0
+offset_right = 107.0
+offset_bottom = 11.0
+color = Color(0.5988863, 0.9127482, 1, 1)
+
+[node name="Platform_3" type="CollisionShape2D" parent="Platform"]
+position = Vector2(1034, 216)
+shape = SubResource("RectangleShape2D_s3kv8")
+
+[node name="ColorRect" type="ColorRect" parent="Platform/Platform_3"]
+offset_left = -108.0
+offset_top = -10.0
+offset_right = 104.0
+offset_bottom = 10.0
+color = Color(0.5988863, 0.9127482, 1, 1)
+
+[node name="Platform_2" type="CollisionShape2D" parent="Platform"]
+position = Vector2(577, 287)
+shape = SubResource("RectangleShape2D_s3kv8")
+
+[node name="ColorRect" type="ColorRect" parent="Platform/Platform_2"]
+offset_left = -107.0
+offset_top = -10.0
+offset_right = 105.0
+offset_bottom = 10.0
+color = Color(0.5988863, 0.9127482, 1, 1)
+
+[node name="Platform_1" type="CollisionShape2D" parent="Platform"]
+position = Vector2(1029, 404)
+shape = SubResource("RectangleShape2D_s3kv8")
+
+[node name="ColorRect" type="ColorRect" parent="Platform/Platform_1"]
+offset_left = -107.0
+offset_top = -11.0
+offset_right = 106.0
+offset_bottom = 10.0
+color = Color(0.5855537, 0.927856, 0.9999998, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-238, 591)
+shape = SubResource("RectangleShape2D_wua0t")
