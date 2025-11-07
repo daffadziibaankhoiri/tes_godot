@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 150.0
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -450.0
 const gravity = 980
 
 @onready var sprite = $CollisionShape2D/Pohon
