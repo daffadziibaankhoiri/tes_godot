@@ -78,9 +78,9 @@ position = Vector2(126, 177)
 shape = SubResource("RectangleShape2D_s3kv8")
 
 [node name="ColorRect" type="ColorRect" parent="Platform/Platform_4"]
-offset_left = -105.0
+offset_left = -104.0
 offset_top = -9.0
-offset_right = 107.0
+offset_right = 108.0
 offset_bottom = 11.0
 color = Color(0.5988863, 0.9127482, 1, 1)
 
