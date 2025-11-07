@@ -58,14 +58,14 @@ shape = SubResource("RectangleShape2D_dr1ox")
 position = Vector2(11, 288)
 shape = SubResource("RectangleShape2D_dr1ox")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="ini punya daffa" type="CharacterBody2D" parent="."]
 script = ExtResource("2_s3kv8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ini punya daffa"]
 position = Vector2(210, 497)
 shape = SubResource("RectangleShape2D_hehlj")
 
-[node name="Pohon" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+[node name="Pohon" type="Sprite2D" parent="ini punya daffa/CollisionShape2D"]
 position = Vector2(2.9999962, 9.00001)
 scale = Vector2(0.1205, 0.123874985)
 texture = ExtResource("3_wua0t")
